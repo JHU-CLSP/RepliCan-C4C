@@ -1,0 +1,62 @@
+username: yicao-elina
+paper_title: Tuning Nernst coefficients in 2D materials by first-principles modeling
+paper_pdf: https://doi.org/10.1039/d3nr06127b
+identifier: 10.1039/d3nr06127b
+claim_type: custom_code
+code_url: ''
+data_url: ''
+claims:
+- claim: Trilayer graphene with ABA stacking exhibits an exceptionally large Nernst
+    coefficient of 112 μV (KT)^-1 at room temperature.
+  instruction:
+  - Construct an ABA-stacked trilayer graphene structure
+  - 'Perform DFT calculations using Quantum Espresso (version 7.1): - Exchange-correlation:
+    Engel-Vosko functional - Pseudopotentials: Projector augmented wave method (PAW)
+    - Van der Waals correction: DFT-D - Relax atomic positions to minimum energy'
+  - 'Calculate transport properties using ElecTra and NERTAW codes: - Obtain necessary
+    inputs (bulk and shear moduli, dielectric constant, phonon frequency, band gap,
+    and deformation potentials) from literature or calculate using DFT. - Use maximally
+    localized Wannier functions (MLWF) as implemented in Wannier90. - Consider electron-phonon
+    and ionized impurity scattering mechanisms in ElecTra. - Calculate Nernst coefficient
+    using NERTAW with a magnetic field of 0.4 T and temperature of 300 K'
+  - 'Expected result: ~112 μV (KT)^-1.  The paper does not provide an uncertainty'
+- claim: Monolayer graphene exhibits a maximum Nernst coefficient of 40 μV (KT)^-1
+    at room temperature.
+  instruction:
+  - Construct a monolayer graphene structure
+  - Follow steps 2-4 from the previous claim, adapting the structure to monolayer
+    graphene
+  - 'Expected result: ~40 μV (KT)^-1. The paper does not provide an uncertainty'
+- claim: ABC-stacked trilayer graphene exhibits a maximum Nernst coefficient of 35
+    μV (KT)^-1 at room temperature.
+  instruction:
+  - Construct an ABC-stacked trilayer graphene structure
+  - Follow steps 2-4 from the first claim, adapting the structure to ABC-stacked trilayer
+    graphene
+  - 'Expected result: ~35 μV (KT)^-1. The paper does not provide an uncertainty'
+- claim: AAA-stacked trilayer phosphorene exhibits a maximum Nernst coefficient of
+    44 μV (KT)^-1 at room temperature.
+  instruction:
+  - Construct an AAA-stacked trilayer phosphorene structure (armchair configuration)
+  - Follow steps 2-4 from the first claim, adapting the structure to AAA-stacked trilayer
+    phosphorene
+  - 'Expected result: ~44 μV (KT)^-1. The paper does not provide an uncertainty'
+non_reproducible_claims:
+- claim: Experimental carrier mobility of monolayer graphene agrees with theoretical
+    results.
+  reason: 'reason: non_computational explanation: Requires experimental measurements
+    of carrier mobility.'
+- claim: Graphite hole mobility decreases with increasing temperature.
+  reason: 'reason: non_computational explanation: Requires experimental measurements
+    of hole mobility at different temperatures.'
+- claim: Electron mobility of AB stacked bilayer graphene decreases with increasing
+    carrier concentration.
+  reason: 'reason: non_computational explanation: Requires experimental measurements
+    of electron mobility at different carrier concentrations.'
+- claim: Mobility of p-type single layer phosphorene decreases with increasing temperature.
+  reason: 'reason: non_computational explanation: Requires experimental measurements
+    of p-type mobility at different temperatures.'
+- claim: Nernst coefficient of bulk black phosphorus is 15 μV (KT)^-1 at room temperature.
+  reason: 'reason: data_unavailable explanation: The paper cites a previous study
+    for this value, but the specific conditions (magnetic field, carrier concentration)
+    are not provided.'

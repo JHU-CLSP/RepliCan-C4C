@@ -1,0 +1,55 @@
+username: yicao-elina
+paper_title: Investigating the Structural, Electronic and Magnetic Properties of Single
+  Vanadium Atom Doped Germanene Monolayer using Density Functional Theory (DFT)
+paper_pdf: https://doi.org/10.19184/cerimre.v7i1.38572
+identifier: 10.19184/cerimre.v7i1.38572
+claim_type: custom_code
+code_url: ''
+data_url: ''
+claims:
+- claim: Single V atom doped Germanene monolayer induced both ferromagnetic and antiferromagnetic
+    behavior with total magnetic moment of about 0.77 μB and 1.95 μB respectively.
+  instruction:
+  - Create a 2x2x1 supercell of germanene (32 atoms)
+  - Substitute one Ge atom with a V atom
+  - 'DFT setup in Quantum Espresso: - Exchange-correlation: GGA-PBE - Pseudopotentials:
+    Norm-conserving - K-points: 4x4x1 Monkhorst-Pack grid - Kinetic energy cutoff:
+    500 eV - Vacuum gap: 15 Å'
+  - Relax atomic positions
+  - 'Perform spin-polarized calculations for both ferromagnetic and antiferromagnetic
+    configurations. - For ferromagnetic: Initialize V atom and its periodic image
+    with parallel spins. - For antiferromagnetic: Initialize V atom and its periodic
+    image with antiparallel spins'
+  - Calculate total magnetic moment using `pw.x`
+  - 'Expected results: ~0.77 μB (ferromagnetic), ~1.95 μB (antiferromagnetic)'
+- claim: The cohesive energy of pristine germanene sheet is found to be -4.506 eV/atom
+    and that of V-doped system is -4.108 eV/atom.
+  instruction:
+  - Perform steps 1-4 from the previous claim
+  - Calculate total energy of pristine germanene supercell (E_T_pristine)
+  - Calculate total energy of single isolated Ge atom (E_Ge) and V atom (E_V)
+  - 'Calculate cohesive energy using Eq. 15: E_Coh = (E_T - n * E_Ge - m * E_V) /
+    N, where n and m are the number of Ge and V atoms, respectively, and N is the
+    total number of atoms'
+  - 'Expected results: ~ -4.506 eV/atom (pristine), ~ -4.108 eV/atom (V-doped)'
+- claim: The binding energy of undoped and V-doped germanene are -6.102 eV and -7.152
+    eV, respectively.
+  instruction:
+  - Perform steps 1-4 from the first claim
+  - Calculate total energy of germanene supercell with one vacancy (E_Ge-vacancy)
+  - 'Calculate binding energy using Eq. 16: E_bind = E_T - E_Ge-vacancy - E_V'
+  - 'Expected results: ~ -6.102 eV (undoped), ~ -7.152 eV (V-doped)'
+non_reproducible_claims:
+- claim: The single V-doped germanene monolayer can support the quantum anomalous
+    Hall effect.
+  reason: 'reason: practical_limits explanation: While the paper mentions observing
+    a quantum anomalous Hall-like effect, the provided computational details are insufficient
+    to fully reproduce the specific calculations needed to confirm this effect.  Further
+    details on the specific k-point path, analysis methods, and potentially spin-orbit
+    coupling settings would be required.'
+- claim: Raman spectroscopy confirms N incorporation
+  reason: 'reason: non_computational explanation: Requires experimental measurements.'
+- claim: Charge density contours show covalent bonding character.
+  reason: 'reason: data_unavailable explanation: While charge density calculations
+    are mentioned, the specific data or visualization methods are not provided to
+    reproduce the contours shown in Figure 6.'

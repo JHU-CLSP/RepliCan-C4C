@@ -1,0 +1,40 @@
+username: yicao-elina
+paper_title: Fractional quantum Hall effect with unconventional pairing in monolayer
+  graphene
+paper_pdf: https://arxiv.org/pdf/2212.01706.pdf
+identifier: '2212.01706'
+claim_type: custom_code
+code_url: ''
+data_url: ''
+claims: []
+non_reproducible_claims:
+- claim: The composite-fermion Fermi sea in this Landau level is unstable to an f-wave
+    pairing.
+  reason: 'reason: practical_limits explanation: The paper uses a BCS variational
+    wave function for composite fermions and performs numerical calculations using
+    lattice Monte Carlo. While the theoretical framework is described, the specific
+    implementation details and computational cost make direct reproduction challenging
+    without access to their code and computational resources.'
+- claim: Analogous calculation suggests the possibility of a p-wave pairing of composite
+    fermions at half filling in the n = 2 graphene Landau level, whereas no pairing
+    instability is found at half filling in the n = 0 and 1 graphene Landau levels.
+  reason: 'reason: practical_limits explanation: Similar to the previous claim, this
+    involves complex numerical calculations with specialized techniques and potentially
+    high computational cost, hindering straightforward reproduction.'
+- claim: The CFFS is unstable to f-wave pairing at half filling in the n = 3 graphene
+    LL.
+  reason: 'reason: practical_limits explanation: This claim is based on numerical
+    minimization of energy using lattice Monte Carlo, which requires significant computational
+    resources and specific implementation details not fully provided in the paper.'
+- claim: The overlap of the exact Coulomb ground in graphene at the half-filled n
+    = 3 LL with BCS-f state is approximately 0.25 in the parameter range where the
+    energy is minimum.
+  reason: 'reason: practical_limits explanation: Calculating overlaps with the exact
+    ground state requires exact diagonalization or other computationally intensive
+    methods, especially for larger systems, making reproduction difficult without
+    access to their specific implementation.'
+- claim: The lowest energy is obtained for the p-wave paired state [in the n=2 graphene
+    LL].
+  reason: 'reason: practical_limits explanation: This is based on numerical energy
+    minimization, similar to the other claims, and requires substantial computational
+    resources and specific implementation details not fully disclosed.'
