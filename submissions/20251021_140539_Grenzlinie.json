@@ -1,0 +1,20 @@
+{
+  "username": "Grenzlinie",
+  "paper_title": "A prompt-engineered large language model, deep learning workflow for materials classification",
+  "paper_pdf": "https://doi.org/10.1016/j.mattod.2024.08.028",
+  "identifier": "10.1016/j.mattod.2024.08.028",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/Grenzlinie/MgBERT_LLM_Classification_for_Materials_Science",
+  "claims": [
+    {
+      "claim": "Given a material composition, the model will classify it to \"BMG\"/\"Ribbon\"/\"Non-Ribbon\".\nIf all composition in the test set were examined, the classification accuracy should be 88.5%, which means 85% materials are correctly classfied.",
+      "instruction": [
+        "Checkpoint download: Download MgBERT weight to root dir: https://figshare.com/articles/software/MgBERT_pth/26879239",
+        "Environment configuration: Configure the environment as shown in Step 1.",
+        "Script running: Run all blocks in MgBERT_LLM_Classification_for_Materials_Science/single_inference_test.ipynb",
+        "Case study: test the result of composition Mg59.5Cu22.9Ag6.6Gd11 (If you want to test other composition, just replace the content in MgBERT_LLM_Classification_for_Materials_Science/test.txt by AI generated description through our prompt template)",
+        "Final answer: The code should output 'BMG' in the jupyter notebook, which means the Mg59.5Cu22.9Ag6.6Gd11 is bulk metallic glass."
+      ]
+    }
+  ]
+}

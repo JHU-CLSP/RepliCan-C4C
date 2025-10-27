@@ -1,0 +1,17 @@
+{
+  "username": "Grenzlinie",
+  "paper_title": "Large language models for material property predictions: elastic constant tensor prediction and materials design",
+  "paper_pdf": "https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00061k",
+  "identifier": "10.1039/D5DD00061K",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/Grenzlinie/ElaTBot",
+  "data_url": "https://figshare.com/articles/dataset/Large_Language_Models_for_Material_Property_Predictions_elastic_constant_tensor_prediction_and_materials_design/28399757/1?file=54029759",
+  "claims": [
+    {
+      "claim": "The results of ElaTBot-DFT at 0K test set.\nPerformance comparison among different prompts on the test set.\nPrompt Type Bulk modulus MAE (GPa) R\n2 Cij MAE (GPa) R\n2\n1 9.04 0.947 2.79 0.947\n2 8.12 0.955 2.45 0.957\n3 8.60 0.954 2.67 0.956\n4 7.74 0.963 2.32 0.965\n\nPerformance comparison with previous algorithms on the same test set (0K). 0 K training set was used because MatTen requires\nthe structural information at 0 K\nAlgorithm Bulk modulus MAE(GPa) R\n2 Cij MAE(GPa) R\n2\nRandom forest 10.58 0.927 3.33 0.924\nMatTen 7.98 0.959 2.43 0.963\nDarwin (Llama2-based) 11.35 0.918 3.47 0.915\nThis work (Llama2 with prompt4) 7.74 0.963 2.32 0.965",
+      "instruction": [
+        "Follow the README.md (https://github.com/Grenzlinie/ElaTBot/blob/main/README.md) step by step"
+      ]
+    }
+  ]
+}

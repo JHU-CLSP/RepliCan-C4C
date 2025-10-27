@@ -1,0 +1,22 @@
+{
+  "username": " Grenzlinie",
+  "paper_title": "MatTools: Benchmarking Large Language Models for Materials Science Tools",
+  "paper_pdf": "https://arxiv.org/abs/2505.10852",
+  "identifier": "10.48550/arXiv.2505.10852",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/Grenzlinie/MatTools",
+  "claims": [
+    {
+      "claim": "The LLM answering correctness in QA benchmark without agent:\nModel Accuracy (%)\nCode Doc\nClosed-source LLMs\nGemini-1.5-Flash 75.59 76.37\nGemini-1.5-Pro 80.60 82.90\nGemini-2.0-Flash 73.85 82.76\nOpen-source LLMs\nQwen2.5-7B-Instruct 74.37 75.79\nQwen2.5-14B-Instruct 76.72 80.26\nQwen2.5-Coder-14B-Instruct 77.44 79.44\nQwen2.5-32B-Instruct 80.03 82.01\nQwen2.5-Coder-32B-Instruct 79.18 79.85\nQwen2.5-72B-Instruct 81.36 81.82\nMaterials chemistry LLMs\nChemDFM-v1.5-8B 32.35 30.20\nChemLLM-7B-Chat-1_5-DPO 0.18 0.13\nDarwin 1.5-7B 0.01 0.01",
+      "instruction": [
+        "Follow the README.md step by step (https://github.com/Grenzlinie/MatTools/blob/main/README.md)"
+      ]
+    },
+    {
+      "claim": "The LLM answering correctness in real-world tool-usage benchmark without agent:\nModels Absolute Performance Success Rate (%)\nRunnable Functions Successful Tasks Functions Tasks\n(out of 49) (out of 138)\ngpt-3.5-turbo-0125 11 6 22.45 4.35\n9 3 18.37 2.17\n10 6 20.41 4.35\ngpt-4o-mini-2024-07-18 21 17 42.86 12.32\n22 19 44.9 13.77\n23 24 46.94 17.39\ngpt-4o-2024-08-06 23 25 46.94 18.12\n26 26 53.06 18.84\n18 25 36.73 18.12\ngemini-2.0-flash 10 15 20.41 10.87\n9 20 18.37 14.49\n9 18 18.37 13.04\ngemini-2.0-flash-thinking-exp-01-21 22 36 44.9 26.9\n20 39 40.82 28.26\n21 30 42.86 21.74",
+      "instruction": [
+        "Follow the README.md step by step (https://github.com/Grenzlinie/MatTools/blob/main/README.md)"
+      ]
+    }
+  ]
+}
