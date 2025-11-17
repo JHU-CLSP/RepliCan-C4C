@@ -7,13 +7,24 @@
   "code_url": "https://github.com/JinnyJingLuo/Figures_FCC.git",
   "claims": [
     {
-      "claim": "Figs. 9(a) and (b) show that most of the stress–strain curves predicted for pure metals have d < 1, indicating that the experimental curves are well within the predicted uncertainty range. Only one Ni, one Cu, and one Al stress–strain curve from the dataset of sixty four pure metal stress–strain curves were outside the range of our predictions. ",
+      "claim": "Figure show that most of the stress–strain curves predicted for pure metals have d < 1, indicating that the experimental curves are well within the predicted uncertainty range. Only one Ni, one Cu, and one Al stress–strain curve from the dataset of sixty four pure metal stress–strain curves were outside the range of our predictions. ",
       "instruction": [
         "run claim_1.py"
       ]
-    },
+    }
+  ]
+}
+
+{
+  "username": "Jing Luo",
+  "paper_title": "Uncertainty-aware machine learning framework for predicting dislocation plasticity and stress–strain response in metallic alloys, Part I : FCC systems",
+  "paper_pdf": "https://www.sciencedirect.com/science/article/pii/S1359645425008961?via%3Dihub",
+  "identifier": "https://doi.org/10.1016/j.actamat.2025.121610",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/JinnyJingLuo/Figures_FCC.git",
+  "claims": [
     {
-      "claim": "Only one Ni, one Cu, and one Al stress–strain curve from the dataset of sixty four pure metal stress–strain curves were outside the range of our predictions. \",",
+      "claim": " Only one Ni, one Cu, and one Al stress–strain curve from the dataset of sixty four pure metal stress–strain curves were outside the range of our predictions. ",
       "instruction": [
         "run claim_1.py"
       ]
