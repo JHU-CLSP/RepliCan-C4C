@@ -140,9 +140,9 @@ claims:
     
     7. Expected output: Relaxed lattice parameters a = 8.267 Å, b = 8.177 Å, c = 11.768 Å. Successful run shows agreement with experimental values within ±0.05 Å. Failed run shows significant deviation (>0.1 Å) from experimental or calculated reference values.'
 
-
 - claim: "We observed defect formation energies for Bri ranging from 0.60–0.71 eV and 0.59–0.63 eV for neutral Bri 2×2×2 and 3×2×2 systems, respectively, and between 0.74–1.00 eV and 0.66–0.88 eV for Bri' 2×2×2 and 3×2×2 systems, respectively."
-  instruction: '1. Required input files: CsPbBr3 crystal structure, pseudopotentials, DFT parameters for defect calculations, Freysoldt correction parameters.
+  instruction: |
+    1. Required input files: CsPbBr3 crystal structure, pseudopotentials, DFT parameters for defect calculations, Freysoldt correction parameters.
     
     2. Create 2×2×2 and 3×2×2 supercells of CsPbBr3 using Quantum ESPRESSO, where the primary cell is downloaded from Materials Project (mp-567681).
     
@@ -154,8 +154,7 @@ claims:
     
     6. Repeat calculations for multiple interstitial positions to obtain the range of formation energies.
     
-    7. Expected output: Ef ranges of 0.60–0.71 eV (neutral, 2×2×2), 0.59–0.63 eV (neutral, 3×2×2), 0.74–1.00 eV (charged, 2×2×2), and 0.66–0.88 eV (charged, 3×2×2). Successful run produces formation energies within these ranges. Failed run shows values significantly outside these ranges (>±0.1 eV deviation).'
-
+    7. Expected output: Ef ranges of 0.60–0.71 eV (neutral, 2×2×2), 0.59–0.63 eV (neutral, 3×2×2), 0.74–1.00 eV (charged, 2×2×2), and 0.66–0.88 eV (charged, 3×2×2). Successful run produces formation energies within these ranges. Failed run shows values significantly outside these ranges (>±0.1 eV deviation).
 
 - claim: "No matter where the defective atom was initiated, following a relax calculation to locate its preferred structure, both neutral and charged Bri adopted a pentagonal bipyramidal coordination polyhedral structure surrounding a Pb atom (a PbBr7 complex)."
   instruction: '1. Required input files: CsPbBr3 supercell, pseudopotentials, structural relaxation parameters.
@@ -192,7 +191,8 @@ claims:
 
 
 - claim: "This figure indicates that, at almost all the Fermi levels between the CBM and VBM a negatively charged Br interstitial has a lower formation energy than a neutral Br."
-  instruction: '1. Required input files: Formation energy data for neutral and charged Br interstitials, band structure data for CBM and VBM positions.
+  instruction: |
+    1. Required input files: Formation energy data for neutral and charged Br interstitials, band structure data for CBM and VBM positions.
     
     2. Calculate formation energies for neutral Bri and negatively charged Bri' as functions of Fermi level using equation (2).
     
@@ -204,7 +204,7 @@ claims:
     
     6. Compare formation energies of neutral versus charged states across the Fermi level range.
     
-    7. Expected output: Formation energy plot showing negatively charged Br interstitial has lower formation energy than neutral across most of the band gap range. Successful analysis shows clear energetic preference for charged state. Failed analysis shows neutral state preferred over significant portions of the band gap or incorrect transition points.'
+    7. Expected output: Formation energy plot showing negatively charged Br interstitial has lower formation energy than neutral across most of the band gap range. Successful analysis shows clear energetic preference for charged state. Failed analysis shows neutral state preferred over significant portions of the band gap or incorrect transition points.
 
 
 - claim: "We found that the defect formation energy (Ef) for the Bri-Pbi split interstitial configuration varies depending on the axis along which the Br-Pb pair is aligned. The Ef is found to be around 0.83 eV when the pair is aligned along the z-axis. In contrast, the Ef value increases to 1.14 eV when the split interstitial is aligned along the y-axis."
@@ -490,7 +490,8 @@ claims:
 
 
 - claim: "Considering the activation energies of halide interstitials, we note that the charged system pathway sits at a very slightly more energetically preferred position relative to the neutral pathway for Em. As a result, when Ef and Em are summed to determine the activation energy, Ea values for charged and neutral Br interstitials are very similar."
-  instruction: '1. Required input files: Formation and migration energy data for both neutral and charged Br interstitials, Table 1 reference values.
+  instruction: |
+    1. Required input files: Formation and migration energy data for both neutral and charged Br interstitials, Table 1 reference values.
     
     2. Extract formation energies (Ef) for neutral Bri (0.59-0.63 eV) and charged Bri' (0.66-0.88 eV) from previous calculations.
     
@@ -504,7 +505,7 @@ claims:
     
     7. Confirm that despite formation energy differences, final activation energies are similar between charge states.
     
-    8. Expected output: Ea(neutral) = 0.79-1.17 eV and Ea(charged) = 0.85-1.29 eV showing overlapping ranges and similar values. Em(charged) < Em(neutral) demonstrating energetic preference for charged migration. Successful calculation shows comparable activation energies despite formation energy differences. Failed calculation shows significantly different Ea values (>0.3 eV difference) between charge states.'
+    8. Expected output: Ea(neutral) = 0.79-1.17 eV and Ea(charged) = 0.85-1.29 eV showing overlapping ranges and similar values. Em(charged) < Em(neutral) demonstrating energetic preference for charged migration. Successful calculation shows comparable activation energies despite formation energy differences. Failed calculation shows significantly different Ea values (>0.3 eV difference) between charge states.
 
 
 - claim: "These results clearly indicate that the most favorable migration pathway amongst the ones we studied features a collective and concerted movement of several atoms, consistent with the interstitial 'domino effect' in vacancy-assisted migration."
@@ -526,7 +527,8 @@ claims:
 
 
 - claim: "Defect formation energies for Bri ranging from 0.60–0.71 eV and 0.59–0.63 eV for neutral Bri 2×2×2 and 3×2×2 systems, respectively, and between 0.74–1.00 eV and 0.66–0.88 eV for Bri' 2×2×2 and 3×2×2 systems, respectively (from Table 1)."
-  instruction: '1. Required input files: CsPbBr3 crystal structure, pseudopotentials for Cs/Pb/Br, DFT parameters, Freysoldt correction scheme parameters.
+  instruction: |
+    1. Required input files: CsPbBr3 crystal structure, pseudopotentials for Cs/Pb/Br, DFT parameters, Freysoldt correction scheme parameters.
     
     2. Create 2×2×2 and 3×2×2 supercells of CsPbBr3 using Quantum ESPRESSO.
     
@@ -540,7 +542,7 @@ claims:
     
     7. Determine ranges of formation energies across different interstitial positions for each system size and charge state.
     
-    8. Expected output: Ef ranges of 0.60–0.71 eV (neutral, 2×2×2), 0.59–0.63 eV (neutral, 3×2×2), 0.74–1.00 eV (charged, 2×2×2), and 0.66–0.88 eV (charged, 3×2×2). Successful run produces formation energies within these specified ranges. Failed run shows values significantly outside ranges (>±0.1 eV) or incorrect size/charge dependencies.'
+    8. Expected output: Ef ranges of 0.60–0.71 eV (neutral, 2×2×2), 0.59–0.63 eV (neutral, 3×2×2), 0.74–1.00 eV (charged, 2×2×2), and 0.66–0.88 eV (charged, 3×2×2). Successful run produces formation energies within these specified ranges. Failed run shows values significantly outside ranges (>±0.1 eV) or incorrect size/charge dependencies.
 
 
 - claim: "Migration energies for Bri ranging from 0.20-0.54 eV for neutral and 0.19-0.41 eV for charged states, and split interstitial migration energies of 0.02 eV for neutral (Bri-Pbi) split and 0.37 eV for (Bri-Bri) split (from Table 1)."
