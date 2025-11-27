@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Temperature-dependent discovery of BCC refractory multi-principal element alloys: Integrating deep learning and CALPHAD calculations",
+  "paper_pdf": "https://www.sciencedirect.com/science/article/pii/S0927025625005294",
+  "identifier": "https://doi.org/10.1016/j.commatsci.2025.114186",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/6",
+  "claims": [
+    {
+      "claim": "At T = 1200 K, the trained model identified 6063 candidate compositions in the Ti–Fe–Al–V–Ni–Nb–Zr system (d = 0.03) as BCC with a predicted BCC volume fraction ≥ 0.9",
+      "instruction": [
+        "Run Eval6.ipynb",
+        "The code normalizes the design space, feeds it into the trained model, and prints the number of BCC samples",
+        "The expected number of BCC samples is 6063"
+      ]
+    }
+  ]
+}

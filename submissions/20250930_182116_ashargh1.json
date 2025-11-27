@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Temperature-dependent discovery of BCC refractory multi-principal element alloys: Integrating deep learning and CALPHAD calculations",
+  "paper_pdf": "https://www.sciencedirect.com/science/article/pii/S0927025625005294",
+  "identifier": "https://doi.org/10.1016/j.commatsci.2025.114186",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/4",
+  "claims": [
+    {
+      "claim": "On the test dataset, the trained MLP achieves an R2 score of 0.96 for predicting the BCC phase.",
+      "instruction": [
+        "Run Eval4.ipynb",
+        "The code loads the trained checkpoint, evaluates the model on the test dataset, and prints the R2 values for all phases",
+        "The expected R2 for the BCC phase is given by the second printed value, approximately 0.96"
+      ]
+    }
+  ]
+}
