@@ -1,0 +1,28 @@
+{
+  "username": "WyattBunstine",
+  "paper_title": "Disordered layers and dimerization in the crystal structure of TaOCl2",
+  "paper_pdf": "https://www.sciencedirect.com/science/article/pii/S0022459624002251/pdfft?crasolve=1&r=98436d5a9fcfd667&ts=1758728918274&rtype=https&vrr=UKN&redir=UKN&redir_fr=UKN&redir_arc=UKN&vhash=UKN&host=d3d3LnNjaWVuY2VkaXJlY3QuY29t&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&re=X2JsYW5rXw%3D%3D&ns_h=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ns_e=X2JsYW5rXw%3D%3D&rh_fd=rrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&tsoh_fd=rrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&hc=~rrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejhwrrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejhwrrr)n%5Ed%60i%5E%60_dm%60%5Eo)%5Ejh&iv=016d65852253dcf1747d4f8269432f86&token=32646131643631313639336639613264633565633662303062376330313336303636663239663563653533313435616633343531383862356330353262313438613465633737366463313735663566633733366662656632396661626536656264333230366261643961303630653964643831396161373062326162656632643a663539353939396331323631306631353138343134613062&text=c1761f33f9a3080b5e8690caac6eead4a7d40a26a42b9932fbcb379c575f38e7dc1d669dca1af69ee25af7101a046974fa90ebb68726098050d4b7306e1a4b26d387e70e40ea673c694edb9a65dd5694fb9e923e888f25573fb7504fe85943ac7fdc8a93e0f2f36228e8e53fec7b6f8bec6126740054a7c0dde916eef07bc033246504a387955d702754b627fe66009643881ec2920eaff986941e585648f27bb34ae4cc8c14ef5938f59926b80f69d9df877dca321080619470a93e485c1abfe0fb9916096e3403d70934180cf854d4b616818b564645f9158493dedf1039fa0605ad8ef9b873a4fda1c7ab0306e0b167e80a46c9d25aaa07f08460529f73758072f47821cc4c2edd552e67c9a7f8ae84fa3dc916c8c253ffa9937f0500291cbc8709c89398ea8bed15e3705c144698&original=3f6d64353d3063303163636634663039303335343665363833383166656231303663353961267069643d312d73322e302d53303032323435393632343030323235312d6d61696e2e706466&chkp=1c&rack=98436d5a9fcfd667",
+  "identifier": "https://doi.org/10.1016/j.jssc.2024.124771",
+  "claim_type": "pip_libraries",
+  "claims": [
+    {
+      "claim": "Claim is that dimerisation of Ta atoms in TaOCl2 results in a flat band at the Fermi level in the electronic band structure while undistorted TaOCl2 has a band with a ~2.5 eV bandwidth. ",
+      "instruction": [
+        "Install Quantum Espresso or equivalent DFT code",
+        "Open setup file for Quantum Espresso and set following parameters",
+        "Use functional PBE: GGA functional with PBEsol",
+        "Set kgrid to 10 x 10 x 10",
+        "Set convergence for total energy to 10^-5 eV",
+        "Turn on spin orbit coupling",
+        "Set convergence for change in potential to 10^-7 eV",
+        "Set all other parameters to defaults as no other parameters were specified in paper",
+        "Construct cif file from tables 2 and 3 in paper",
+        "Add atomic strucutre informaiton to Quantum Espresso setup file",
+        "Run ground state electron density calculation to convergence",
+        "Calculate band structure and density of states",
+        "Repeat steps 2-11 with cif file information from tables 4 and 5",
+        "Compare band structures and density of states to figures 10 and 11 in the paper; the results should be qualitatively similar"
+      ]
+    }
+  ]
+}
