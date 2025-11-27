@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Temperature-dependent discovery of BCC refractory multi-principal element alloys: Integrating deep learning and CALPHAD calculations",
+  "paper_pdf": "https://www.sciencedirect.com/science/article/pii/S0927025625005294",
+  "identifier": "https://doi.org/10.1016/j.commatsci.2025.114186",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/3",
+  "claims": [
+    {
+      "claim": "The trained MLP reaches 90% accuracy on the testing dataset using an absolute deviation tolerance of 0.07 per phase",
+      "instruction": [
+        "Run Eval3.ipynb",
+        "The code loads the trained checkpoint, evaluates the model on the test dataset, and prints the accuracy",
+        "The expected accuracy is approximately 0.90"
+      ]
+    }
+  ]
+}
