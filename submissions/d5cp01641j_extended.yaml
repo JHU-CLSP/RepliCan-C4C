@@ -1,0 +1,572 @@
+paper_title: Low-energy pathways lead to self-healing defects in CsPbBr3
+paper_pdf: https://pubs.rsc.org/en/content/articlepdf/2025/cp/d5cp01641j 
+identifier: https://doi.org/10.1039/d5cp01641j
+code_url: https://github.com/pclancy-lab/perovskite_defect_study.git
+data_url: https://github.com/pclancy-lab/perovskite_defect_study.git
+claims:
+- claim: The relaxed cell parameters for the pristine CsPbBr3 supercell (3 x 3 x 2)
+    (with Pnma spacegroup) were found to be 8.267, 8.177 and 11.768 Å.
+  instruction: '1. Relax a 3 x 3 x 2 supercell of CsPbBr3 with Pnma spacegroup using
+    Quantum ESPRESSO with PBE functional, ultrasoft pseudopotentials, a plane wave
+    cut-off of 40 Ryd (400 Ryd on the charge density).
+
+    2. Extract the relaxed cell parameters.
+
+    3. Expected output: approximately 8.267, 8.177, and 11.768 Å.
+
+    '
+- claim: Defect formation energies for Bri ranging from 0.60–0.71 eV and 0.59–0.63
+    eV for neutral Bri 2 x 2 x 2 and 3 x 2 x 2 systems, respectively, and between
+    0.74–1.00 eV and 0.66–0.88 eV for Br0i 2 x 2 x 2 and 3 x 2 x 2 systems, respectively.
+  instruction: '1. Create 2 x 2 x 2 and 3 x 2 x 2 supercells of CsPbBr3 using Quantum
+    ESPRESSO.
+
+    2. Introduce a neutral Bri or Br0i interstitial defect.
+
+    3. Perform relax calculations to find the preferred structure.
+
+    4. Calculate defect formation energy using equation (3) mentioned in the paper
+    and the Freysoldt correction scheme.
+
+    5. Expected output: Ef within the mentioned ranges for each respective supercell
+    size and charge state.
+
+    '
+- claim: Migration energies (Em) for Bri lie between 0.20 and 0.54 eV.
+  instruction: '1. Create a 2 x 2 x 2 supercell of CsPbBr3 using Quantum ESPRESSO.
+
+    2. Introduce a Bri interstitial defect.
+
+    3. Perform relax calculations to find the preferred initial and final structures
+    for Bri migration.
+
+    4. Perform NEB calculations using Quantum ESPRESSO with 10 images between initial
+    and final states to determine the migration energy barrier.
+
+    5. Expected output: Em within the range of 0.20 to 0.54 eV.
+
+    '
+- claim: Activation energy of 0.335 eV for the recombination of a pair of anti-sites
+    BrPb–PbBr.
+  instruction: '1. Create a 2 x 2 x 2 supercell of CsPbBr3 using Quantum ESPRESSO.
+
+    2. Introduce BrPb and PbBr anti-site defects within a first nearest neighbor distance.
+
+    3. Perform relax calculations to find the preferred initial and final structures
+    for recombination.
+
+    4. Perform NEB calculations using Quantum ESPRESSO to find the minimum energy
+    pathway for recombination and extract the activation energy.
+
+    5. Expected output: Activation energy of approximately 0.335 eV.
+
+    '
+
+
+
+- claim: "Our calculations uncover interstitial defect pathways capable of producing an activation energy at, or below, the single experimental value of 0.53 eV observed for the slow, temperature-dependent recovery of light-induced conductivity in bulk CsPbBr3."
+  instruction: '1. Required input files: CsPbBr3 crystal structure, pseudopotentials for all atoms, DFT and NEB calculation parameters.
+    
+    2. Calculate formation energies (Ef) for Br interstitial defects using DFT total energy differences between defect and perfect supercells.
+      (Formation energy: E^f(D^q) = E(D^q) - E_{\text{bulk}} - \sum_i \Delta n_i \mu_i + q(E_{VBM} + \epsilon_F) + E_{\text{corr}}
+      where $E^f(D^q)$ represents the defect formation energy of a defect $D$ in charge state $q$ and $E_{\text{bulk}}$ the total energy of the pristine bulk supercell. 
+      Equation \ref{eq:2} incorporates changes in the number of atoms ($\Delta n_i$) and chemical potentials ($\mu_i$). )
+    
+    3. Set up NEB calculations for interstitial migration pathways between different interstitial sites.
+    
+    4. Run NEB calculations to obtain migration energies (Em) for interstitial diffusion.
+    
+    5. Calculate activation energies as Ea = Ef + Em for each interstitial pathway.
+    
+    6. Compare calculated activation energies with experimental value of 0.53 eV.
+    
+    7. Expected output: At least one interstitial defect pathway with Ea ≤ 0.53 eV. Successful run identifies pathways matching experimental activation energy within ±0.1 eV. Failed run shows all calculated Ea values significantly above 0.53 eV.'
+
+
+- claim: "Our work reveals the existence of a low-energy diffusion pathway involving a concerted 'domino effect' of interstitials, with the net result that interstitials can diffuse more readily over longer distances than expected."
+  instruction: '1. Required input files: 2x2x2 CsPbBr3 supercell structure, pseudopotentials, NEB parameters for complex pathways 
+    
+    2. Create configurations with initial Br interstitials.
+    
+    3. Design migration pathway where movement of one interstitial triggers sequential movement of neighboring interstitials (domino effect).
+        (First, identify initial and final positions for all interstitials and its neighbors involved in the concerted migration.
+          Then, create intermediate images where each interstitial moves stepwise toward the vacancy site, which means The atom index in the first and last image in the NEB input file should be modified according to the "domino pathway" where some intermediate atoms are involved in the whole migration process).
+
+    4. Set up NEB calculation for the concerted multi-interstitial migration pathway.
+    
+    5. Run NEB to determine energy barrier for the domino effect pathway.
+    
+    6. Compare energy barrier with individual interstitial migration energies
+      (which is when there is no intermediate atom involved in the migration process).
+    
+    7. Calculate effective diffusion distance per migration event for domino pathway versus single interstitial hops.
+    
+    8. Expected output: Domino effect pathway showing lower energy barrier per unit diffusion distance compared to individual interstitial migrations. Successful run demonstrates concerted motion with enhanced diffusion efficiency. Failed run shows no energetic advantage or non-physical pathway.'
+
+
+- claim: "Both Ef and Em can be determined computationally, performed here using density functional theory (DFT) calculations, thus allowing activation energies to be estimated."
+  instruction: '1. Required input files: Perfect CsPbBr3 crystal structure, defect structure files, Quantum ESPRESSO input parameters, pseudopotentials.
+    
+    2. Perform DFT total energy calculations for perfect CsPbBr3 supercell.
+    
+    3. Create defect configurations (vacancies, interstitials) and perform DFT relaxation calculations.
+    
+    4. Calculate formation energies Ef using: Ef = E_defect - E_perfect + Σμi where μi are chemical potentials
+      (chemical potential values are calculated from the bulk phases of interstitial/vacancy elements, in this case Br).
+    
+    5. Set up NEB calculations between initial and final defect positions to determine migration pathways.
+    
+    6. Run NEB calculations to obtain migration energies Em from energy barriers
+      (where Em can be calculated as the energy difference between the highest energy saddle point along the NEB path and the initial state,
+      this can be read from the neb.out file generated by Quantum ESPRESSO NEB calculation).
+    
+    7. Calculate activation energies as Ea = Ef + Em.
+    
+    8. Expected output: Successfully calculated Ef values for various defects, Em values from converged NEB pathways, and resulting Ea values. Successful run produces physically reasonable energies (Ef: 0.5-2.0 eV, Em: 0.1-1.0 eV). Failed run shows non-converged calculations or unphysical energy values.'
+
+
+- claim: "The relaxed cell parameters for the pristine CsPbBr3 supercell (3×3×2) (with Pnma spacegroup) were found to be 8.267, 8.177 and 11.768 Å. These values correspond very favorably to experimentally reported ones: 8.23, 8.18 and 11.73 Å."
+  instruction: '1. Required input files: CsPbBr3 crystal structure in Pnma space group, Cs/Pb/Br pseudopotentials, Quantum ESPRESSO input parameters for structural relaxation.
+    
+    2. Create a 3×3×2 supercell of CsPbBr3 in Pnma space group, where the primary cell is downloaded from Materials Project (mp-567681).
+    
+    3. Set up structural relaxation calculation in Quantum ESPRESSO with appropriate convergence criteria for forces and stress.
+    
+    4. Run relax calculation allowing both atomic positions and cell parameters to optimize.
+    
+    5. Extract final lattice parameters from relaxed structure.
+    
+    6. Compare calculated lattice parameters with experimental values.
+    
+    7. Expected output: Relaxed lattice parameters a = 8.267 Å, b = 8.177 Å, c = 11.768 Å. Successful run shows agreement with experimental values within ±0.05 Å. Failed run shows significant deviation (>0.1 Å) from experimental or calculated reference values.'
+
+
+- claim: "We observed defect formation energies for Bri ranging from 0.60–0.71 eV and 0.59–0.63 eV for neutral Bri 2×2×2 and 3×2×2 systems, respectively, and between 0.74–1.00 eV and 0.66–0.88 eV for Bri' 2×2×2 and 3×2×2 systems, respectively."
+  instruction: '1. Required input files: CsPbBr3 crystal structure, pseudopotentials, DFT parameters for defect calculations, Freysoldt correction parameters.
+    
+    2. Create 2×2×2 and 3×2×2 supercells of CsPbBr3 using Quantum ESPRESSO, where the primary cell is downloaded from Materials Project (mp-567681).
+    
+    3. Introduce a neutral Bri or negatively charged Bri' interstitial defect at various interstitial positions.
+    
+    4. Perform relax calculations to find the preferred structure for each defect configuration.
+    
+    5. Calculate defect formation energy using equation (2) with appropriate chemical potentials and Freysoldt correction scheme.
+    
+    6. Repeat calculations for multiple interstitial positions to obtain the range of formation energies.
+    
+    7. Expected output: Ef ranges of 0.60–0.71 eV (neutral, 2×2×2), 0.59–0.63 eV (neutral, 3×2×2), 0.74–1.00 eV (charged, 2×2×2), and 0.66–0.88 eV (charged, 3×2×2). Successful run produces formation energies within these ranges. Failed run shows values significantly outside these ranges (>±0.1 eV deviation).'
+
+
+- claim: "No matter where the defective atom was initiated, following a relax calculation to locate its preferred structure, both neutral and charged Bri adopted a pentagonal bipyramidal coordination polyhedral structure surrounding a Pb atom (a PbBr7 complex)."
+  instruction: '1. Required input files: CsPbBr3 supercell, pseudopotentials, structural relaxation parameters.
+    
+    2. Create multiple initial configurations with Br interstitial placed at different off-lattice positions within the supercell.
+    
+    3. Set up relax calculations for both neutral and charged Br interstitials starting from various initial positions.
+    
+    4. Run structural relaxation calculations allowing full atomic position optimization.
+    
+    5. Analyze final relaxed structures to determine coordination environment around Pb atoms near the interstitial.
+    
+    6. Count coordination number and identify geometry (pentagonal bipyramidal) of PbBr complexes.
+    
+    7. Verify that all different starting positions converge to the same PbBr7 coordination structure.
+    
+    8. Expected output: All relaxed structures show Br interstitials forming PbBr7 complexes with pentagonal bipyramidal geometry regardless of initial position. Successful run demonstrates consistent coordination environment formation. Failed run shows different final structures or coordination numbers depending on starting position.'
+
+
+- claim: "Hence system size did not affect the defect formation energy values. However, choosing to model Bri in a −1 charge state, rather than being neutral, resulted in a range of values from 0.03 to 0.25 eV for a larger system size at the VBM."
+  instruction: '1. Required input files: CsPbBr3 supercells of different sizes (2×2×2 and 3×2×2), pseudopotentials, defect calculation parameters.
+    
+    2. Calculate defect formation energies for neutral Br interstitials in both 2×2×2 and 3×2×2 supercells.
+    
+    3. Calculate defect formation energies for negatively charged Br interstitials in both supercell sizes.
+    
+    4. Compare formation energy ranges between different system sizes for the same charge state.
+    
+    5. Calculate the difference in formation energies between neutral and charged states at the VBM.
+    
+    6. Analyze system size dependence by comparing energy ranges across supercell sizes.
+    
+    7. Expected output: Formation energy ranges show minimal system size dependence for same charge states (difference <0.1 eV). Charge state effect shows 0.03–0.25 eV difference between neutral and charged states at VBM. Successful run demonstrates size-independence and charge-dependent energy differences. Failed run shows significant system size effects (>0.15 eV) or incorrect charge state energy differences.'
+
+
+- claim: "This figure indicates that, at almost all the Fermi levels between the CBM and VBM a negatively charged Br interstitial has a lower formation energy than a neutral Br."
+  instruction: '1. Required input files: Formation energy data for neutral and charged Br interstitials, band structure data for CBM and VBM positions.
+    
+    2. Calculate formation energies for neutral Bri and negatively charged Bri' as functions of Fermi level using equation (2).
+    
+    3. Determine VBM and CBM positions from band structure calculations of pristine CsPbBr3.
+    
+    4. Plot formation energies versus Fermi energy level for both charge states across the full band gap.
+    
+    5. Identify charge state transition points where formation energies of different charge states are equal.
+    
+    6. Compare formation energies of neutral versus charged states across the Fermi level range.
+    
+    7. Expected output: Formation energy plot showing negatively charged Br interstitial has lower formation energy than neutral across most of the band gap range. Successful analysis shows clear energetic preference for charged state. Failed analysis shows neutral state preferred over significant portions of the band gap or incorrect transition points.'
+
+
+- claim: "We found that the defect formation energy (Ef) for the Bri-Pbi split interstitial configuration varies depending on the axis along which the Br-Pb pair is aligned. The Ef is found to be around 0.83 eV when the pair is aligned along the z-axis. In contrast, the Ef value increases to 1.14 eV when the split interstitial is aligned along the y-axis."
+  instruction: '1. Required input files: CsPbBr3 supercell structure, pseudopotentials, DFT parameters for defect calculations, split interstitial configuration templates.
+    
+    2. Create split interstitial configurations where one Pb interstitial and one Br interstitial share a single Pb lattice site.
+    
+    3. Set up two different orientations: Br-Pb pair aligned along z-axis and y-axis directions.
+    
+    4. Remove one Pb atom from its lattice site and place both Pb and Br atoms sharing that site in the specified orientations.
+    
+    5. Perform structural relaxation calculations for both orientations to find optimized geometries.
+    
+    6. Calculate defect formation energies using equation (2) for both z-axis and y-axis aligned configurations.
+    
+    7. Compare formation energies between the two orientations to verify anisotropic effect.
+    
+    8. Expected output: Ef ≈ 0.83 eV for z-axis alignment and Ef ≈ 1.14 eV for y-axis alignment, showing ~0.4 eV energy difference. Successful run demonstrates clear anisotropic behavior with energy difference of 0.3-0.5 eV. Failed run shows similar energies for both orientations or values outside ±0.1 eV of expected ranges.'
+
+
+- claim: "We do not see this anisotropic effect for Bri-Bri split interstitials, but we do see polyhedral formation for Bri interstitials."
+  instruction: '1. Required input files: CsPbBr3 supercell, pseudopotentials, structural analysis tools for coordination environment determination.
+    
+    2. Create Br-Br split interstitial configurations where two Br atoms share a single Br lattice site.
+    
+    3. Set up multiple orientations (x, y, z axes) for the Br-Br split interstitial pair.
+    
+    4. Perform structural relaxation calculations for all orientations.
+    
+    5. Calculate defect formation energies for each orientation to test for anisotropic effects.
+    
+    6. Analyze final structures to identify polyhedral coordination environments around nearby Pb atoms.
+    
+    7. Compare formation energies across different orientations and examine coordination geometries.
+    
+    8. Expected output: Similar Ef values across different Br-Br orientations (difference <0.1 eV) showing no anisotropic effect, but clear polyhedral structures around Pb centers. Successful run shows orientation-independent energies with identifiable coordination polyhedra. Failed run shows significant orientation dependence (>0.2 eV) or absence of polyhedral formation.'
+
+
+- claim: "Our neutral calculations resulted in large formation energies of 6.1 eV and 1.3 eV for PbBr and BrPb anti-site defects, respectively. These values are in close agreement with values of 6.28 eV and 1.4 eV obtained by Kang et al."
+  instruction: '1. Required input files: CsPbBr3 supercell, pseudopotentials, chemical potential values for Pb and Br, DFT calculation parameters.
+    
+    2. Create PbBr anti-site defect by replacing a Br atom with a Pb atom at a Br lattice site.
+    
+    3. Create BrPb anti-site defect by replacing a Pb atom with a Br atom at a Pb lattice site.
+    
+    4. Perform structural relaxation calculations for both neutral anti-site defect configurations.
+    
+    5. Calculate defect formation energies using equation (2) with appropriate chemical potentials.
+    
+    6. Compare calculated values with literature values from Kang et al. (6.28 eV and 1.4 eV).
+    
+    7. Expected output: Ef = 6.1 eV for neutral PbBr and Ef = 1.3 eV for neutral BrPb anti-site defects. Successful run shows agreement with literature within ±0.2 eV. Failed run shows significant deviation (>0.3 eV) from both calculated and literature reference values.'
+
+
+- claim: "A neutral PbBr is calculated to have a formation energy of 6.18 eV. The charged PbBr equivalent shows an increasing trend in Ef values: PbBr•• has the highest Ef (7.46 eV), followed by PbBr• (6.31 eV) at CBM."
+  instruction: '1. Required input files: CsPbBr3 supercell, pseudopotentials, charged defect calculation parameters, Freysoldt correction scheme.
+    
+    2. Create PbBr anti-site defect configurations in three charge states: neutral (0), +1 (PbBr•), and +2 (PbBr••).
+    
+    3. Set up charged defect calculations with appropriate background charge compensation.
+    
+    4. Perform structural relaxation for all three charge states.
+    
+    5. Calculate formation energies at the CBM for charged states using equation (2) with Freysoldt corrections.
+    
+    6. Verify increasing trend: neutral < +1 charge < +2 charge formation energies.
+    
+    7. Expected output: Ef values of 6.18 eV (neutral), 6.31 eV (+1 charge), and 7.46 eV (+2 charge) showing increasing trend with charge. Successful run demonstrates clear charge-dependent energy increase. Failed run shows non-monotonic trend or values outside ±0.2 eV of expected ranges.'
+
+
+- claim: "The defect formation energy (Ef) for a neutral BrPb is calculated to be 1.30 eV, close to the value of 1.27 eV for the negatively charged state at VBM."
+  instruction: '1. Required input files: CsPbBr3 supercell, pseudopotentials, charged and neutral defect calculation parameters.
+    
+    2. Create BrPb anti-site defect in both neutral and negatively charged (-1) states.
+    
+    3. Perform structural relaxation calculations for both charge states.
+    
+    4. Calculate formation energy for neutral BrPb using equation (2).
+    
+    5. Calculate formation energy for negatively charged BrPb at the VBM including appropriate corrections.
+    
+    6. Compare formation energies between neutral and charged states.
+    
+    7. Expected output: Ef = 1.30 eV for neutral BrPb and Ef = 1.27 eV for negatively charged BrPb at VBM, showing minimal charge effect (difference ~0.03 eV). Successful run shows similar energies within ±0.1 eV. Failed run shows significant difference (>0.2 eV) between charge states or values outside expected ranges.'
+
+
+- claim: "In the context of vacancy-assisted migration, our investigations unveiled what we have termed a 'domino effect' strategy that can assist the translocation of an interstitial across the lattice, a phenomenon particularly pronounced in interactions involving second and third nearest neighbors."
+  instruction: '1. Required input files: CsPbBr3 supercell with Br interstitial and Br vacancy, pseudopotentials, NEB calculation parameters for multi-atom pathways.
+    
+    2. Create initial configuration with Br interstitial and Br vacancy separated by second or third nearest neighbor distances.
+    
+    3. Set up NEB pathways comparing direct jump migration versus domino effect migration involving intermediate atoms.
+    
+    4. Design domino pathway where interstitial movement triggers sequential displacement of 1-2 intermediate Br atoms toward the vacancy.
+    
+    5. Run NEB calculations for both direct jump and domino effect pathways to compare energy barriers.
+    
+    6. Analyze energy profiles to identify barrier reduction in domino versus direct mechanisms.
+    
+    7. Calculate mean square displacement (MSD) for atoms involved in each pathway type.
+    
+    8. Expected output: Domino effect pathways show lower activation energies than direct jumps for second/third neighbor distances. Energy profiles demonstrate flattened barriers with intermediate atom involvement. Successful run shows clear energetic advantage (>0.1 eV reduction) for domino mechanism. Failed run shows no energetic benefit or higher barriers for domino pathways.'
+
+
+- claim: "Looking at the MSD in Figure 5(a),(c), we observe that it follows a linear regime in the direct jump scenario: The activation energy increases with increasing MSD, as might be expected. In contrast, in the domino effect strategy, Figure 5(b),(d), the activation energy tapered off for sufficiently large MSD values of the interstitials."
+  instruction: '1. Required input files: Multiple NEB pathway configurations for both direct jump and domino mechanisms, analysis scripts for MSD calculations.
+    
+    2. Calculate NEB pathways for direct jump migrations at various distances (first, second, third neighbors).
+    
+    3. Calculate NEB pathways for domino effect migrations at corresponding distances with intermediate atoms.
+    
+    4. For each pathway, compute mean square displacement of all atoms at the transition state (saddle point).
+    
+    5. Extract activation energies from NEB energy profiles for all pathways.
+    
+    6. Plot activation energy versus MSD for both direct jump and domino mechanisms.
+    
+    7. Perform linear regression analysis to identify trends in each mechanism type.
+    
+    8. Expected output: Direct jump shows linear increase of activation energy with MSD. Domino effect shows flattening/tapering of activation energy at large MSD values. Successful analysis demonstrates clear difference in scaling behavior between mechanisms. Failed analysis shows similar linear trends for both mechanisms or inconsistent data patterns.'
+
+
+- claim: "As depicted in Figure 5, the direct jump has two local energy peaks in the migration process, indicating two relatively high energy barriers that migration will need to overcome. When an intermediate atom is introduced, only one peak remains in the migration pathway and the migration energy is reduced."
+  instruction: '1. Required input files: CsPbBr3 supercell configurations for third neighbor jump pathways, NEB parameters for detailed energy profiles.
+    
+    2. Set up direct jump NEB calculation from interstitial to third neighbor vacancy site without intermediate atoms.
+    
+    3. Set up domino pathway with one intermediate Br atom participating in the migration process.
+    
+    4. Run NEB calculations with sufficient image density to resolve detailed energy profiles and identify local maxima.
+    
+    5. Analyze energy profiles to count number of local peaks/barriers in each pathway.
+    
+    6. Compare total migration energies between direct and one-intermediate pathways.
+    
+    7. Identify specific energy barriers that are eliminated by intermediate atom involvement.
+    
+    8. Expected output: Direct jump pathway shows two distinct local energy maxima. One-intermediate pathway shows single remaining peak with overall reduced migration energy. Successful run demonstrates clear barrier elimination and energy reduction. Failed run shows same number of peaks or higher energies with intermediate involvement.'
+
+
+- claim: "Introduction of yet another intermediate atom flattens the leftmost barrier and the resulting migration energy is effectively reduced to near zero."
+  instruction: '1. Required input files: CsPbBr3 supercell, NEB parameters for complex multi-atom pathways, convergence criteria for low-barrier calculations.
+    
+    2. Set up domino pathway with two intermediate Br atoms participating in the migration sequence.
+    
+    3. Design pathway where second intermediate atom specifically addresses the leftmost energy barrier from the one-intermediate case.
+    
+    4. Run NEB calculation with fine energy resolution to capture near-zero migration barriers.
+    
+    5. Compare energy profile with one-intermediate case to identify barrier flattening.
+    
+    6. Verify that migration energy approaches zero (within 0.05 eV) for the two-intermediate pathway.
+    
+    7. Analyze structural changes showing how second intermediate eliminates remaining barrier.
+    
+    8. Expected output: Two-intermediate pathway shows migration energy ≤ 0.05 eV with flattened leftmost barrier. Energy profile demonstrates near-barrierless migration. Successful run achieves quasi-barrierless diffusion through domino mechanism. Failed run shows significant remaining barriers (>0.1 eV) or convergence issues.'
+
+
+- claim: "Looking at the NEB results, the coordination polyhedra observed for neutral and charged selected (starred) points both followed this pattern: formation of a monocapped trigonal prism (Image 1), pentagonal bipyramid (Image 10), monocapped trigonal prism (Image 19), pentagonal bipyramid (Image 28), pentagonal bipyramid (Image 37)."
+  instruction: '1. Required input files: CsPbBr3 supercell for Br interstitial migration, NEB pathway configurations, coordination analysis tools.
+    
+    2. Set up NEB calculation for Br interstitial migration through 2×2×2 supercell for both neutral and charged states.
+    
+    3. Run NEB calculations generating sufficient intermediate images to capture coordination changes.
+    
+    4. Extract atomic coordinates for images 1, 10, 19, 28, and 37 from the NEB pathway.
+    
+    5. Analyze coordination environment around Pb atoms near the migrating Br interstitial for each selected image.
+    
+    6. Identify coordination polyhedra geometries using bond distance and angle analysis.
+    
+    7. Verify the sequence: monocapped trigonal prism → pentagonal bipyramid → monocapped trigonal prism → pentagonal bipyramid → pentagonal bipyramid.
+    
+    8. Expected output: Coordination analysis confirms the specified sequence of polyhedral geometries at the designated NEB images for both charge states. Successful analysis identifies correct coordination patterns with proper geometric classification. Failed analysis shows different coordination sequences or inability to classify polyhedra consistently.'
+
+
+- claim: "In addition to the previously described vacancy-assisted migration, our investigations have revealed that Br interstitials are quite capable of migrating to alternate interstitial sites without a paired vacancy nearby."
+  instruction: '1. Required input files: CsPbBr3 supercell with single Br interstitial (no vacancy), pseudopotentials, NEB calculation parameters for interstitial-only migration.
+    
+    2. Create initial configuration with Br interstitial at one interstitial site in the supercell.
+    
+    3. Identify target interstitial site for migration without any vacancies present in the system.
+    
+    4. Set up NEB calculation pathway between initial and final interstitial positions.
+    
+    5. Run NEB calculations for both neutral and charged Br interstitials to determine migration barriers.
+    
+    6. Verify that migration occurs through interstitial sites only, not involving lattice site exchanges.
+    
+    7. Extract migration energies from NEB energy profiles for vacancy-free pathways.
+    
+    8. Expected output: Successful NEB convergence showing finite migration barriers for interstitial-to-interstitial pathways without vacancies. Migration energies should be accessible (typically 0.1-1.0 eV). Successful run demonstrates feasible interstitial migration. Failed run shows extremely high barriers (>2 eV) or non-converged pathways indicating infeasible migration.'
+
+
+- claim: "For both the charged and neutral pathways, the coordination polyhedra for the starred points adopt the following structures: monocapped trigonal prism (Coordinate 1), pentagonal bipyramid (Coordinate 10), monocapped trigonal prism (Coordinate 19), pentagonal bipyramid (Coordinate 28), pentagonal bipyramid (Coordinate 37)."
+  instruction: '1. Required input files: NEB pathway data for Br interstitial migration in 2×2×2 CsPbBr3 supercell, coordination analysis software, structural analysis tools.
+    
+    2. Extract atomic coordinates for both neutral and charged Br interstitial pathways at reaction coordinates 1, 10, 19, 28, and 37.
+    
+    3. For each coordinate point, analyze the coordination environment around the Pb atom nearest to the Br interstitial.
+    
+    4. Determine coordination number (should be 7 for heptacoordinate complexes) and identify geometric arrangement.
+    
+    5. Classify polyhedral geometry using bond angles and distances: monocapped trigonal prism vs pentagonal bipyramid.
+    
+    6. Verify the sequence matches the claimed pattern for both charge states.
+    
+    7. Compare coordination environments between neutral and charged pathways at equivalent points.
+    
+    8. Expected output: Coordination analysis confirms monocapped trigonal prism at coordinates 1 and 19, pentagonal bipyramid at coordinates 10, 28, and 37 for both charge states. Successful analysis shows consistent polyhedral identification. Failed analysis shows different coordination patterns or inconsistent geometries between charge states.'
+
+
+- claim: "In agreement with the Kepert model, the energetically preferred, i.e., lowest energy, heptacoordination type is the pentagonal bipyramid. The monocapped trigonal prism and monocapped octahedron polyhedra are still 'accessible' but non-preferred."
+  instruction: '1. Required input files: CsPbBr3 configurations with PbBr7 complexes in different coordination geometries, DFT energy calculation parameters.
+    
+    2. Create model PbBr7 complexes with three different heptacoordinate geometries: pentagonal bipyramid, monocapped trigonal prism, and monocapped octahedron.
+    
+    3. Embed each geometry type in CsPbBr3 supercell environment maintaining realistic local structure.
+    
+    4. Perform structural relaxation calculations for each coordination type while constraining overall geometry.
+    
+    5. Calculate total energies for each heptacoordinate configuration.
+    
+    6. Compare relative energies to determine energetic preference order.
+    
+    7. Verify that pentagonal bipyramid shows lowest energy consistent with Kepert model predictions.
+    
+    8. Expected output: Energy ordering shows pentagonal bipyramid < monocapped trigonal prism ≈ monocapped octahedron. Energy differences should be 0.1-0.5 eV between preferred and non-preferred geometries. Successful calculation confirms Kepert model predictions. Failed calculation shows different energy ordering or negligible energy differences (<0.05 eV).'
+
+
+- claim: "The mechanism for recombination of a pair of anti-sites, BrPb + PbBr, to a null (perfect) crystal, follows a concerted-exchange pathway. This recombination mechanism is quite energetically affordable for the crystal, with a Ea value of 0.335 eV."
+  instruction: '1. Required input files: CsPbBr3 supercell with BrPb and PbBr anti-site defect pair, NEB parameters for concerted motion, formation energy data.
+    
+    2. Create initial configuration with BrPb anti-site (Br atom on Pb site) and PbBr anti-site (Pb atom on Br site) in proximity.
+    
+    3. Design final state showing perfect crystal with both atoms in correct lattice positions.
+    
+    4. Set up NEB pathway for concerted exchange where both atoms simultaneously move toward correct positions.
+    
+    5. Include intermediate states showing vacancy-interstitial character during the exchange process.
+    
+    6. Run NEB calculation to determine migration energy Em for the concerted exchange.
+    
+    7. Calculate activation energy Ea = Ef + Em using formation energies of the anti-site pair.
+    
+    8. Expected output: Converged NEB pathway showing concerted atomic exchange with Ea = 0.335 eV (±0.05 eV). Pathway should show intermediate vacancy-interstitial states. Successful run demonstrates energetically feasible recombination mechanism. Failed run shows much higher activation energy (>0.5 eV) or non-physical exchange pathway.'
+
+
+- claim: "Both BrPb and PbBr undergo slight displacements from their anti-site positions, effectively generating vacancies at their original sites. These displacements simultaneously give rise to interstitial configurations (Bri and Pbi), marking an intermediate stage of the process."
+  instruction: '1. Required input files: NEB pathway data for anti-site recombination, structural analysis tools for vacancy/interstitial identification.
+    
+    2. Extract intermediate structures from the anti-site recombination NEB pathway, particularly around the transition state region.
+    
+    3. Analyze atomic positions relative to ideal lattice sites to identify vacancy formation.
+    
+    4. Track displacement of BrPb and PbBr atoms from their initial anti-site positions during the exchange.
+    
+    5. Identify intermediate configurations where displaced atoms adopt interstitial-like positions.
+    
+    6. Verify simultaneous presence of vacancy character (empty lattice sites) and interstitial character (off-lattice positions).
+    
+    7. Map the progression: anti-sites → vacancy+interstitial intermediate → perfect lattice.
+    
+    8. Expected output: Intermediate NEB images show BrPb and PbBr atoms displaced from lattice sites creating vacancy-interstitial character before reaching final perfect positions. Successful analysis identifies clear intermediate stage with mixed defect character. Failed analysis shows direct exchange without identifiable vacancy-interstitial intermediate states.'
+
+
+- claim: "When the vacancy is not the closest neighbor to the interstitial, the 'domino effect' strategy appears to facilitate this migration as well. We see that, for an interstitial to migrate, having one more intermediate atom involved reduced the migration barrier. Adding a second intermediate atom reduced this barrier almost to zero."
+  instruction: '1. Required input files: CsPbBr3 supercell with Br interstitial and Br vacancy separated by multiple lattice sites, NEB parameters for multi-atom pathways.
+    
+    2. Set up three different migration scenarios: (a) direct jump from interstitial to non-nearest neighbor vacancy, (b) pathway with one intermediate Br atom, (c) pathway with two intermediate Br atoms.
+    
+    3. Design NEB pathways where intermediate atoms participate in concerted motion toward the vacancy.
+    
+    4. Run NEB calculations for all three scenarios to obtain migration energy barriers.
+    
+    5. Compare migration energies: direct jump > one intermediate > two intermediates.
+    
+    6. Verify that two-intermediate pathway approaches near-zero migration barrier (<0.05 eV).
+    
+    7. Analyze energy profiles to confirm progressive barrier reduction with additional intermediate atoms.
+    
+    8. Expected output: Migration energies showing clear reduction: Em(direct) > Em(1-intermediate) > Em(2-intermediate) ≈ 0 eV. Two-intermediate pathway should show migration barrier ≤ 0.05 eV. Successful run demonstrates progressive barrier lowering. Failed run shows no systematic reduction or non-zero barrier for two-intermediate case.'
+
+
+- claim: "Considering the activation energies of halide interstitials, we note that the charged system pathway sits at a very slightly more energetically preferred position relative to the neutral pathway for Em. As a result, when Ef and Em are summed to determine the activation energy, Ea values for charged and neutral Br interstitials are very similar."
+  instruction: '1. Required input files: Formation and migration energy data for both neutral and charged Br interstitials, Table 1 reference values.
+    
+    2. Extract formation energies (Ef) for neutral Bri (0.59-0.63 eV) and charged Bri' (0.66-0.88 eV) from previous calculations.
+    
+    3. Extract migration energies (Em) for neutral Bri (0.20-0.54 eV) and charged Bri' (0.19-0.41 eV) from NEB calculations.
+    
+    4. Calculate activation energies Ea = Ef + Em for both charge states using equation (3).
+    
+    5. Compare Ea values between neutral (0.79-1.17 eV) and charged (0.85-1.29 eV) systems.
+    
+    6. Verify that charged pathways show slightly lower Em values than neutral pathways.
+    
+    7. Confirm that despite formation energy differences, final activation energies are similar between charge states.
+    
+    8. Expected output: Ea(neutral) = 0.79-1.17 eV and Ea(charged) = 0.85-1.29 eV showing overlapping ranges and similar values. Em(charged) < Em(neutral) demonstrating energetic preference for charged migration. Successful calculation shows comparable activation energies despite formation energy differences. Failed calculation shows significantly different Ea values (>0.3 eV difference) between charge states.'
+
+
+- claim: "These results clearly indicate that the most favorable migration pathway amongst the ones we studied features a collective and concerted movement of several atoms, consistent with the interstitial 'domino effect' in vacancy-assisted migration."
+  instruction: '1. Required input files: Migration energy data from Table 1 for all defect types, NEB pathway analysis for concerted vs individual atom movements.
+    
+    2. Compare migration energies across all calculated pathways: individual defect migrations, split interstitials, domino effect pathways.
+    
+    3. Identify pathways involving collective/concerted atomic motion versus single-atom migrations.
+    
+    4. Extract lowest migration energy values from domino effect calculations (approaching zero from previous claims).
+    
+    5. Compare with single-atom migration energies for Br interstitials (0.20-0.54 eV neutral, 0.19-0.41 eV charged).
+    
+    6. Verify that split interstitial migrations show lower barriers than individual interstitials.
+    
+    7. Confirm that multi-atom concerted pathways represent the most energetically favorable mechanisms.
+    
+    8. Expected output: Domino effect pathways show lowest migration barriers (≤0.05 eV), split interstitials show intermediate values (0.02-0.37 eV), individual migrations show highest barriers (0.19-0.54 eV). Successful analysis demonstrates clear energetic hierarchy favoring concerted motion. Failed analysis shows individual pathways as energetically competitive with or better than concerted mechanisms.'
+
+
+- claim: "Defect formation energies for Bri ranging from 0.60–0.71 eV and 0.59–0.63 eV for neutral Bri 2×2×2 and 3×2×2 systems, respectively, and between 0.74–1.00 eV and 0.66–0.88 eV for Bri' 2×2×2 and 3×2×2 systems, respectively (from Table 1)."
+  instruction: '1. Required input files: CsPbBr3 crystal structure, pseudopotentials for Cs/Pb/Br, DFT parameters, Freysoldt correction scheme parameters.
+    
+    2. Create 2×2×2 and 3×2×2 supercells of CsPbBr3 using Quantum ESPRESSO.
+    
+    3. Introduce neutral Br interstitial defects at various interstitial positions in both supercell sizes.
+    
+    4. Introduce negatively charged Br interstitial defects (Bri') in both supercell sizes with appropriate charge compensation.
+    
+    5. Perform structural relaxation calculations for all defect configurations.
+    
+    6. Calculate defect formation energies using equation (2) with proper chemical potentials and Freysoldt corrections.
+    
+    7. Determine ranges of formation energies across different interstitial positions for each system size and charge state.
+    
+    8. Expected output: Ef ranges of 0.60–0.71 eV (neutral, 2×2×2), 0.59–0.63 eV (neutral, 3×2×2), 0.74–1.00 eV (charged, 2×2×2), and 0.66–0.88 eV (charged, 3×2×2). Successful run produces formation energies within these specified ranges. Failed run shows values significantly outside ranges (>±0.1 eV) or incorrect size/charge dependencies.'
+
+
+- claim: "Migration energies for Bri ranging from 0.20-0.54 eV for neutral and 0.19-0.41 eV for charged states, and split interstitial migration energies of 0.02 eV for neutral (Bri-Pbi) split and 0.37 eV for (Bri-Bri) split (from Table 1)."
+  instruction: '1. Required input files: CsPbBr3 supercells with various interstitial configurations, NEB calculation parameters, split interstitial structure files.
+    
+    2. Set up NEB pathways for neutral Br interstitial migration between different interstitial sites.
+    
+    3. Set up NEB pathways for charged Br interstitial migration between equivalent sites.
+    
+    4. Create split interstitial configurations: (Bri-Pbi) sharing Pb site and (Bri-Bri) sharing Br site.
+    
+    5. Design NEB pathways for split interstitial migrations to neighboring split configurations.
+    
+    6. Run all NEB calculations to obtain migration energy barriers from energy profiles.
+    
+    7. Extract migration energy ranges across different pathways for each defect type.
+    
+    8. Expected output: Em = 0.20-0.54 eV (neutral Bri), Em = 0.19-0.41 eV (charged Bri), Em = 0.02 eV (neutral Bri-Pbi split), Em = 0.37 eV (Bri-Bri split). Successful calculations produce migration energies within specified ranges. Failed calculations show values outside ranges or incorrect relative ordering between defect types.'
+
+
+
+
+non_reproducible_claims:
+- claim: The DFT-simulated peaks line up, essentially perfectly, with the experimental
+    results.
+  reason: data_unavailable
+  explanation: Experimental XRD data for comparison can not be directly read in the paper or
+    supplementary information.
+source_file: d5cp01641j.txt
