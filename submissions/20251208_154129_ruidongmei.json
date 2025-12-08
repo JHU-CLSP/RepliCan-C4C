@@ -1,0 +1,50 @@
+{
+  "username": "ruidongmei",
+  "paper_title": "Dislocation Mechanisms in Titanium: Three-Dimensional Discrete Dislocation Dynamics Simulations",
+  "paper_pdf": "https://drive.google.com/file/d/1Wl1RV7e4y3r2S4wktulnsRDH9tZyO695/view?usp=sharing",
+  "identifier": "https://drive.google.com/file/d/1Wl1RV7e4y3r2S4wktulnsRDH9tZyO695/view?usp=sharing",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ruidongmei/Paradis_Ti",
+  "claims": [
+    {
+      "claim": "Yield stresses were measured at 0.1% plastic strain. We find that, overall, with the increasing of Schmid ratio, the yielding stress decreases from around 300 MPa (Schmid ratio=0.14) to 80 MPa (Schmid ratio=1.83). Furthermore, in small Schmid ratio where basal Schmid factor is dominant, yield stress drops drastically (e.g., by 100 Mpa from 0.14 to 0.22), whereas in large SF ratio regime (Schmid ratio is greater than 1) where prismatic Schmid is dominant, yield stress maintained at around 80 Mpa.",
+      "context": "All input files are under folders named in the format of \"num+_orientation/num+_case\". In the reproduction instructions, step 3 should be changed based on the name format, for example, \"cd ./paradis_main/2_orientation/1_case/\" will give you one case with the second loading orientation.",
+      "instruction": [
+        "cd ./paradis_main",
+        "make",
+        "cd ./paradis_main/1_orientation/1_case/",
+        "mpirun -np 80 ../../bin/paradis"
+      ]
+    },
+    {
+      "claim": "The hardening rate was measured by linear fitting the stress-strain curves after 1% of plastic strain. Similar as the transition in yielding stresses, the hardening rate also shows considerable drop with the increasing of Schmid\nfactor ratio. Surprisingly, in some results where the SF ratio reached 0.14, the hardening rate was measured as high as one shear module.",
+      "context": "All input files are under folders named in the format of \"num+_orientation/num+_case\". In the reproduction instructions, step 3 should be changed based on the name format, for example, \"cd ./paradis_main/2_orientation/1_case/\" will give you one case with the second loading orientation.",
+      "instruction": [
+        "cd ./paradis_main",
+        "make",
+        "cd ./paradis_main/1_orientation/1_case/",
+        "mpirun -np 80 ../../bin/paradis"
+      ]
+    },
+    {
+      "claim": "Slip activation was quantified based on the Von Mises plastic strain accumulated by each slip system at a total strain of 0.3%. Pyramidal <a> slip systems consistently exhibit significant activation, reaching a peak of nearly 70% of the total plastic deformation near the CRSS line. Prismatic <a> slip emerges as the primary deformation mechanism when the Schmid factor ratio exceeds 0.5, accounting for over 60% of the total slip activity, while pyramidal <a> slip remains secondary, contributing 25%. In contrast, basal <a> slip plays a minor role, with activation rates consistently below 20% in all simulations.",
+      "context": "All input files are under folders named in the format of \"num+_orientation/num+_case\". In the reproduction instructions, step 3 should be changed based on the name format, for example, \"cd ./paradis_main/2_orientation/1_case/\" will give you one case with the second loading orientation.",
+      "instruction": [
+        "cd ./paradis_main",
+        "make",
+        "cd ./paradis_main/1_orientation/1_case/",
+        "mpirun -np 80 ../../bin/paradis"
+      ]
+    },
+    {
+      "claim": "Cross-slip-on and cross-slip-off conditions were compared for the scenario where the Schmid factor ratio equals 1.83 at a total strain of 0.2%. In this case, the maximum Schmid factor is 0.42 for the prismatic planes and 0.43 for the pyramidal planes, indicating an almost equal applied shear stress on these slip systems. Basal slip, by comparison, has a lower\nSchmid factor of 0.23. We find that more strain bursts were captured in the cross-slip-on case, indicating that frequent cross-slip causes sudden stress oscillation. Additionally, the flow stress in the cross-slip-on case is higher than cross-slip-off case by 10 MPa. On the other\nhand, in Fig. 11(b), the total dislocation density exhibits minimal variation regardless of whether cross-slip is active or inactive, indicating that differences in material hardening is primarily caused by dislocations transitioning into an immobile state rather than by multiplications of dislocation forests.",
+      "context": "In this case 4_orientation was performed specifically. Step 3 should be changed to \"cd ./paradis_main/4_orientation/4_case/\" to have a cross-slip-on simulation.",
+      "instruction": [
+        "cd ./paradis_main",
+        "make",
+        "cd ./paradis_main/4_orientation/cs_off_case/",
+        "mpirun -np 80 ../../bin/paradis"
+      ]
+    }
+  ]
+}
