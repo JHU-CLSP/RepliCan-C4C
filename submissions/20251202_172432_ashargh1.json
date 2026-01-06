@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/19",
+  "claims": [
+    {
+      "claim": "Even after seven active-learning cycles, the MDN model trained using the low-uncertainty selection strategy achieves an F1 score on the remaining Ti-alloys that remains below 0.45",
+      "instruction": [
+        "Run Eval19.ipynb",
+        "The code loads the MDN model obtained after seven active-learning cycles, evaluates it on the remaining Ti-alloy samples, and computes the F1 score.",
+        "Confirm that the reported F1 score is below 0.45"
+      ]
+    }
+  ]
+}

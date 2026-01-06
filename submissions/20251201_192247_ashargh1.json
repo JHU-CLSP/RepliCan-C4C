@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/12",
+  "claims": [
+    {
+      "claim": "Among the 51 available descriptors, 10 exhibit high pairwise correlation and should therefore be excluded from the model input in this study",
+      "instruction": [
+        "Run Eval12.ipynb",
+        "The code computes the Pearson correlation matrix for all 51 features and identifies all feature pairs with correlation greater than 0.9",
+        "It then prints the indices of the features classified as highly correlated, which should correspond to 10 features"
+      ]
+    }
+  ]
+}

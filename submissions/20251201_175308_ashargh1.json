@@ -1,0 +1,19 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/11",
+  "claims": [
+    {
+      "claim": "The MDN model for FCC-phase prediction trained with WERCS sampling has a lower R2 score than the MDN model trained with Gaussian-Noise sampling on the same testing dataset",
+      "instruction": [
+        "Run Eval11.ipynb",
+        "The code first loads the MDN model trained with Gaussian-Noise sampling, evaluates it on the testing dataset, computes the R2 score, and prints the result.",
+        "It then loads the MDN model trained with WERCS sampling, evaluates it on the same testing dataset, computes the R2 score, and prints the result",
+        "The printed outputs show that the Gaussian-Noise model has an R2 of 0.98, whereas the WERCS-trained model has an R2 of 0.95, thereby confirming the claim that the WERCS model achieves a lower R2 score on the same testing dataset."
+      ]
+    }
+  ]
+}

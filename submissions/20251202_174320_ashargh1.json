@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/20",
+  "claims": [
+    {
+      "claim": "Using an acquisition size of 50 for active learning results in limited improvement. After five cycles, only 66% of the 50 samples that the active-learning approach identified as BCC Ti-alloys are actually BCC.",
+      "instruction": [
+        "Run Eval20.ipynb",
+        "The code loads the MDN model obtained after five active-learning cycles with an acquisition size of 50, performs the selection step to generate 50 candidate BCC samples for the next cycle, and computes the accuracy of those 50 predictions",
+        "Confirm that the reported accuracy is 0.66"
+      ]
+    }
+  ]
+}

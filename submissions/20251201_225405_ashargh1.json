@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/15",
+  "claims": [
+    {
+      "claim": "The trained MDN model predicts a bimodal distribution for the BCC phase fraction of Ti0.32Al0.26V0.19Nb0.11Co0.12 at 974 K, with a mean of 0.95 and a standard deviation of 0.05",
+      "instruction": [
+        "Run Eval15.ipynb",
+        "The code loads the trained MDN model, predicts the BCC phase-fraction distribution for the specified alloy sample, generates the corresponding mixture-distribution plot, and prints the computed mean and standard deviation",
+        "Verify that the plotted distribution exhibits two distinct peaks (bimodal) and confirm that the printed mean is 0.95 and the standard deviation is 0.0."
+      ]
+    }
+  ]
+}
