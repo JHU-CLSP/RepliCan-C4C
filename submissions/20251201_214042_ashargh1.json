@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/13",
+  "claims": [
+    {
+      "claim": "The R2 score of the MDN model trained for Sigma-phase prediction on the testing dataset, using the weighted mean of the Gaussian components, is 0.89",
+      "instruction": [
+        "Run Eval13.ipynb",
+        "The code loads the MDN model, evaluates it on the testing dataset, computes the R2 score, and prints the result",
+        "Verify that the R2 score is 0.89"
+      ]
+    }
+  ]
+}

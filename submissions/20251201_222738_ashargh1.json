@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/14",
+  "claims": [
+    {
+      "claim": "The mesh-density plot for the Laves phase shows that no samples produced by the MDN model fall into any mesh cells corresponding to errors above 0.5",
+      "instruction": [
+        "Run Eval14.ipynb",
+        "The code loads the trained MDN model, evaluates it on the testing dataset, and generates the corresponding 2D mesh-density plot",
+        "Given that the y axis is the error value, check that all mesh cells representing errors greater than 0.5 remain inactive and thus no yellow cells appear in that region"
+      ]
+    }
+  ]
+}

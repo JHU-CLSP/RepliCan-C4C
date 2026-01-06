@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/18",
+  "claims": [
+    {
+      "claim": "At the initial stage, only 61% of the 500 samples that the active-learning approach identified as BCC Ti-alloys are actually BCC",
+      "instruction": [
+        "Run Eval18.ipynb",
+        "The code loads the MDN model trained on Ti-free alloys, evaluates the Ti-alloy compositions, executes the active-learning selection step to identify 500 candidate BCC samples, and then computes the accuracy of those 500 predictions.",
+        "Confirm that the reported accuracy is 0.61."
+      ]
+    }
+  ]
+}

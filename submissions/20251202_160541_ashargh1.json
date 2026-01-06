@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/17",
+  "claims": [
+    {
+      "claim": "After retraining the MDN model using the top 12 features identified by feature-importance analysis, the model achieves an R2 of 0.98 on the testing dataset which is the same as the performance obtained with all 41 features",
+      "instruction": [
+        "Run Eval17.ipynb",
+        "The code loads the MDN model trained using the top 12 features, evaluates it on the testing dataset, and prints the resulting R2 value",
+        "Confirm that the reported R2 is 0.98."
+      ]
+    }
+  ]
+}

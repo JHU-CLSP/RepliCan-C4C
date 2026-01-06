@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Uncertainty-aware phase prediction of RMPEAs via mixture density networks",
+  "paper_pdf": "https://arxiv.org/abs/2510.04892",
+  "identifier": "https://arxiv.org/abs/2510.04892",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/16",
+  "claims": [
+    {
+      "claim": "The MDN model trained for the BCC phase identifies covalent radius, crystal radius, MB electronegativity, Ω, and atomic-size mismatch δ as the five most influential features",
+      "instruction": [
+        ". Run Eval16.ipynb",
+        "The code loads the trained model, performs the input-perturbation feature-importance analysis, and generates a ranked feature-importance plot",
+        "Confirm that the top five features in the ranking are covalent radius, crystal radius, MB electronegativity, Ω, and atomic-size mismatch (δ)."
+      ]
+    }
+  ]
+}
