@@ -1,0 +1,42 @@
+{
+  "username": "jinnyjingluo",
+  "paper_title": "Uncertainty-aware machine learning framework for predicting dislocation plasticity and stress–strain response in metallic alloys, Part I : FCC systems",
+  "paper_pdf": "https://www.sciencedirect.com/science/article/pii/S1359645425008961",
+  "identifier": "https://doi.org/10.1016/j.actamat.2025.121610",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/JinnyJingLuo/Figures_FCC.git",
+  "claims": [
+    {
+      "claim": "When attempting to fit the parameters to multiple experiments for the same material simultaneously, the fitting parameters vary dramatically when fitted across multiple experiments on the same material. The published experimental reports on seemingly identical specimens often exhibit strength values that can differ by an order of magnitude.",
+      "instruction": [
+        "Step1:  create environment with the requirements.txt",
+        "Step2: run the script FigS1_3.py",
+        "Step3: Analyze the generated figure for K_0 K_1 and K_2"
+      ]
+    },
+    {
+      "claim": "Figs. 7(a) and (b) show a comparison between the MDN-predicted evolution of the dislocation density and the experimentally measured values from [26] for \n \nm and \n \nm, respectively. The solid lines represent the predicted mean dislocation density, while the shaded regions indicate the associated uncertainty bounds. The experimental data points for both grain sizes clearly fall within the predicted uncertainty range throughout the strain range, demonstrating that the MDN model effectively captures both the trend and the variability of dislocation evolution across different grain sizes, in excellent agreement with the experimental results. ",
+      "instruction": [
+        "Step1:  create environment with the requirements.txt",
+        "Step2: run ComparedWithExperimentsDensity.py",
+        "Step3: Analyze the generated figure"
+      ]
+    },
+    {
+      "claim": "This dataset included a wide range of grain sizes (1 ≤ d ≤ 300 μm), elastic properties (26 ≤ μ ≤ 76 GPa), and yield strengths (50 MPa ≤ σᵧ ≤ 1 GPa) as summarized in the figure. The output of the model is the the dislocation density distribution and ranges from approximately 10^12 m−2 to 10^14 m−2",
+      "instruction": [
+        "Step1:  create environment with the requirements.txt",
+        "Step2: run figure_2.py",
+        "Step3: Analyze the generated figure"
+      ]
+    },
+    {
+      "claim": "Predicted mean response along with the upper and lower uncertainty bounds, compared to the corresponding experimental data.",
+      "instruction": [
+        "Step1:  create environment with the requirements.txt",
+        "Step2: run ss_simulator_NPR_large_simulations.py",
+        "Step3:  Analyze the generated figure"
+      ]
+    }
+  ]
+}
