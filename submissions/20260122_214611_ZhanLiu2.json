@@ -1,0 +1,56 @@
+{
+  "username": "ZhanLiu2",
+  "paper_title": "Learning nonlinear operators in latent spaces for real-time predictions of complex dynamics in physical systems",
+  "paper_pdf": "https://www.nature.com/articles/s41467-024-49411-w",
+  "identifier": "https://doi.org/10.1038/s41467-024-49411-w",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/Centrum-IntelliPhysics/RepliCan-Latent-DeepONet",
+  "data_url": "https://livejohnshopkins-my.sharepoint.com/:u:/g/personal/zliu274_jh_edu/IQDdOvQWtR2wQ7ZDVo-bhNIbAay4nUpPLR_3FIkXV24w4Ws?e=sPZtp2",
+  "claims": [
+    {
+      "claim": "For random seed 2, the prediction accuracy of Latent DeepONet, measured in terms of mean squared error (MSE) is 0.000184 / 0.000175 / 0.000163 / 0.000163 for latent dimensions d = 9 / 25 / 49 / 64.",
+      "instruction": [
+        "Create an Anaconda Python 3.8 virtual environment.",
+        "Install dependencies in the 'requirements.txt' via pip.",
+        "Downdoad 'shearFailure_merged.mat' dataset from “https://livejohnshopkins-my.sharepoint.com/:u:/g/personal/zliu274_jh_edu/IQDdOvQWtR2wQ7ZDVo-bhNIbAay4nUpPLR_3FIkXV24w4Ws?e=sPZtp2”.",
+        "Run the 'shearFailure randomseed2.ipynb'."
+      ]
+    },
+    {
+      "claim": "For random seed 12, the prediction accuracy of Latent DeepONet, measured in terms of mean squared error (MSE) is 0.000126 / 0.000143 / 0.000130 / 0.000172 for latent dimensions d = 9 / 25 / 49 / 64.",
+      "instruction": [
+        "Run the 'shearFailure randomseed12.ipynb'."
+      ]
+    },
+    {
+      "claim": "For random seed 22, the prediction accuracy of Latent DeepONet, measured in terms of mean squared error (MSE) is 0.000125 / 0.000133 / 0.000133 / 0.000137 for latent dimensions d = 9 / 25 / 49 / 64.",
+      "instruction": [
+        "Run the 'shearFailure randomseed22.ipynb'."
+      ]
+    },
+    {
+      "claim": "For random seed 32, the prediction accuracy of Latent DeepONet, measured in terms of mean squared error (MSE) is 0.000144 / 0.000134 / 0.000140 / 0.000125 for latent dimensions d = 9 / 25 / 49 / 64.",
+      "instruction": [
+        "Run the 'shearFailure randomseed32.ipynb'."
+      ]
+    },
+    {
+      "claim": "For random seed 42, the prediction accuracy of Latent DeepONet, measured in terms of mean squared error (MSE) is 0.000139 / 0.000145 / 0.000125 / 0.000225 for latent dimensions d = 9 / 25 / 49 / 64.",
+      "instruction": [
+        "Run the 'shearFailure randomseed42.ipynb'."
+      ]
+    },
+    {
+      "claim": "Figure 2 (only the top row) in the original paper is reproducible.",
+      "instruction": [
+        "Run the 'violin plot.ipynb' to generate MSE violin plots for MLAE and Latent DeepONet."
+      ]
+    },
+    {
+      "claim": "Figure 3 (only the top two rows) in the original paper is reproducible.",
+      "instruction": [
+        "Run any .ipynb file among the 'shearFailure randomseed2/12/22/32/42.ipynb' to generate crack images."
+      ]
+    }
+  ]
+}
