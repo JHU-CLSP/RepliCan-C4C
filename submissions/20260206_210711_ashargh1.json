@@ -1,0 +1,20 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Deep learning accelerated phase prediction of refractory multi-principal element alloys",
+  "paper_pdf": "https://arxiv.org/pdf/2408.06237",
+  "identifier": "https://doi.org/10.1016/j.actamat.2024.120558",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/30",
+  "claims": [
+    {
+      "claim": "Over 0.8 of Ti alloys with simultaneous BCC, B2, and Laves phases that fail exact-match classification differ by at most one phase label from the true phase labels of their nearest Ti-free neighbors, identified using Euclidean distance in the feature space",
+      "instruction": [
+        "Run Eval30.ipynb",
+        "The notebook loads the trained MLP model and the testing dataset, performs multi-label phase prediction, and filters test samples that exhibit simultaneous BCC, B2, and Laves phases but fail exact-match classification",
+        "The notebook then loads the training dataset from fold 1 and identifies, for each falsely classified Ti alloys, its nearest Ti-free neighbor using Euclidean distance in the normalized feature space",
+        "For each falsely classified Ti alloy, compare its predicted phase-label vector with the ground-truth phase-label vector of its nearest Ti-free neighbor and compute the number of differing phase labels",
+        "Verify that at least 80% of these samples have 0 or 1 mismatch"
+      ]
+    }
+  ]
+}

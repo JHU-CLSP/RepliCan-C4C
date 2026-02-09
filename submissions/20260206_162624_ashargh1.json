@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Deep learning accelerated phase prediction of refractory multi-principal element alloys",
+  "paper_pdf": "https://arxiv.org/pdf/2408.06237",
+  "identifier": "https://doi.org/10.1016/j.actamat.2024.120558",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/26",
+  "claims": [
+    {
+      "claim": "The trained MLP achieves an exact-match accuracy of 0.90 on the testing dataset, correctly predicting the complete set of coexisting phases among eight possible phases",
+      "instruction": [
+        "Run Eval26.ipynb",
+        "The notebook loads the trained MLP model and the testing dataset, computing the exact-match (subset) accuracy defined based on the fraction of test samples for which the predicted phase-presence vector exactly matches the ground truth",
+        "Verify that the reported exact-match accuracy is approximately 0.90 (within ±0.05)"
+      ]
+    }
+  ]
+}

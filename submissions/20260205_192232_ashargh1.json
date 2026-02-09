@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Effect of ice nucleating proteins on the structure-property relationships of ice: A molecular dynamics study",
+  "paper_pdf": "https://arxiv.org/pdf/2510.04892",
+  "identifier": "https://doi.org/10.1063/5.0304550",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/21",
+  "claims": [
+    {
+      "claim": "The ratio of hexagonal to cubic ice (Ih/Ic) in the well-equilibrated ice structure without ice-nucleating proteins (INPs) is significantly higher than that in the ice structure containing two INPs",
+      "instruction": [
+        "Open the final well-equilibrated microstructures W_Tr0.cfg and 2INP_Tr2.cfg in OVITO",
+        "Apply the CHILL+ structural identification modifier to each configuration to compute the fractions of hexagonal ice (Ih) and cubic ice (Ic)",
+        "Verify that the Ih/Ic fraction is approximately 0.62 for W_Tr0.cfg and approximately 0.39 for 2INP_Tr2.cfg"
+      ]
+    }
+  ]
+}

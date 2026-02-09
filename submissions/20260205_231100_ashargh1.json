@@ -1,0 +1,17 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Effect of ice nucleating proteins on the structure-property relationships of ice: A molecular dynamics study",
+  "paper_pdf": "https://arxiv.org/pdf/2510.04892",
+  "identifier": "https://doi.org/10.1063/5.0304550",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/25",
+  "claims": [
+    {
+      "claim": "During creep deformation of polycrystalline ice Ih containing 32 grains, the steady-state strain rate under 0.8 × σᵧ is approximately 200 × 10^5 s⁻¹, while under 0.4 × σᵧ and 0.6 × σᵧ it remains below 100 × 10^5 s⁻¹ ",
+      "instruction": [
+        "Run Eval25.ipynb. The notebook loads 0.4_stress.dat, 0.6_stress.dat, and 0.8_stress.dat, which contain the stress–strain–time outputs of the creep tests. It computes the strain rate via numerical differentiation of strain with respect to time and plots the strain rate as a function of time for all three applied stress levels",
+        "Verify that the curve corresponding to 0.8 × σᵧ (blue curve) reaches a steady-state strain rate of approximately 200 × 10^5 s⁻¹, while the curves corresponding to 0.4 × σᵧ and 0.6 × σᵧ remain below 100 × 10^5 s⁻¹"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Deep learning accelerated phase prediction of refractory multi-principal element alloys",
+  "paper_pdf": "https://arxiv.org/pdf/2408.06237",
+  "identifier": "https://doi.org/10.1016/j.actamat.2024.120558",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/27",
+  "claims": [
+    {
+      "claim": "The trained MLP achieves a per-class (binary) F1 score of approximately 0.98 for the BCC phase on the testing dataset",
+      "instruction": [
+        "Run Eval27.ipynb",
+        "The notebook loads the trained MLP model and the testing dataset, performs multi-label phase prediction, computes a per-class confusion matrix for each phase, and evaluates the per-class (binary) F1 score",
+        "Verify that the printed per-class F1 score for the BCC phase is 0.98 (±0.05)"
+      ]
+    }
+  ]
+}

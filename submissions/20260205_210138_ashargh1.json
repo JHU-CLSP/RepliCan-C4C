@@ -1,0 +1,17 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Effect of ice nucleating proteins on the structure-property relationships of ice: A molecular dynamics study",
+  "paper_pdf": "https://arxiv.org/pdf/2510.04892",
+  "identifier": "https://doi.org/10.1063/5.0304550",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/23",
+  "claims": [
+    {
+      "claim": "In contrast to the ice simulation without ice-nucleating proteins (INPs), the simulation containing INPs exhibits a monotonic decrease in the number of grains throughout the equilibration stage",
+      "instruction": [
+        "Run Eval23.ipynb. The notebook plots the number of grains as a function of simulation time for three independent trials, producing two panels: the left panel corresponds to ice without ice-nucleating proteins (INPs), and the right panel corresponds to ice with INPs",
+        "Verify that, in the left panel, the number of grains remains approximately constant over time across all trials, whereas in the right panel the number of grains exhibits a clear decreasing trend with simulation time."
+      ]
+    }
+  ]
+}
