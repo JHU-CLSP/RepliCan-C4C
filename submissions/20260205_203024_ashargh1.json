@@ -1,0 +1,19 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Effect of ice nucleating proteins on the structure-property relationships of ice: A molecular dynamics study",
+  "paper_pdf": "https://arxiv.org/pdf/2510.04892",
+  "identifier": "https://doi.org/10.1063/5.0304550",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/22",
+  "claims": [
+    {
+      "claim": "The number of grains in the well-equilibrated ice structure without ice-nucleating proteins (INPs) is higher than in the structure containing two INPs",
+      "instruction": [
+        "Open the final well-equilibrated microstructures W_Tr0.cfg and 2INP_Tr2.cfg in OVITO",
+        "Apply the Polyhedral Template Matching (PTM) modifier, enabling the cubic diamond and hexagonal diamond structure templates",
+        "Apply the Grain Segmentation modifier using the PTM structure and orientation information to identify individual grains",
+        "Verify that the total number of grains is approximately 437 for W_Tr0.cfg and approximately 94 for 2INP_Tr2.cfg"
+      ]
+    }
+  ]
+}

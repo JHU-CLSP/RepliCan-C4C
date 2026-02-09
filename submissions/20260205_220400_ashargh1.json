@@ -1,0 +1,17 @@
+{
+  "username": "ashargh1",
+  "paper_title": "Effect of ice nucleating proteins on the structure-property relationships of ice: A molecular dynamics study",
+  "paper_pdf": "https://arxiv.org/pdf/2510.04892",
+  "identifier": "https://doi.org/10.1063/5.0304550",
+  "claim_type": "custom_code",
+  "code_url": "https://github.com/ashargh1/LLM/tree/main/24",
+  "claims": [
+    {
+      "claim": "At T = 230 K, polycrystalline ice containing 32 grains exhibits a tensile yield stress of approximately 300 MPa, as determined from the stress–strain response",
+      "instruction": [
+        "Run Eval24.ipynb. The notebook loads the tensile stress–strain data from W-32.dat and applies the 0.2% offset method by drawing a line starting at a strain of 0.002, with a slope equal to the elastic modulus obtained from the linear elastic region of the stress–strain curve. The offset line and the stress–strain curves are plotted together",
+        "Verify that the offset line intersects the stress–strain curve at a stress of approximately 0.30 GPa (300 MPa)"
+      ]
+    }
+  ]
+}
